@@ -1,0 +1,16 @@
+name: Timer test (temporary)
+
+# Temporary test of GitHub's scheduler. It only prints the time. Safe to delete.
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+
+permissions: {}
+
+jobs:
+  tick:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - run: echo "Started by GitHub's scheduler at $(date -u)"
